@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import SearchBar from "./SearchBar";
 
+
 export default function Body() {
 
     const [books, setBooks] = useState([]) //State for books
@@ -37,6 +38,7 @@ export default function Body() {
     return (
         <>
             <SearchBar handleSearch={handleSearch} search={search} onSubmit={handleSubmit}/>
+            <Library books={books} />
         </>
     )
 }
