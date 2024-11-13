@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import SearchBar from "./SearchBar";
-
+import Library from './Library';
 
 export default function Body() {
 
@@ -15,7 +15,7 @@ export default function Body() {
       const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${search}`);
 
       const data = await response.json();
-      console.log(data.items)
+      console.log(data)
       setBooks(data.items || [])
 
     } catch (err) {
@@ -28,18 +28,16 @@ export default function Body() {
         setSearch(e.target.value)
     }
 
-    //Function for submit event
-    function handleSubmit(e){
+    //Function for click event
+    function handleClick(e){
         e.preventDefault();
         searchBook();
     }
 
-
     return (
         <>
-            <SearchBar handleSearch={handleSearch} search={search} onSubmit={handleSubmit}/>
+            <SearchBar handleSearch={handleSearch} search={search} onClick={handleClick} />
             <Library books={books} />
-        </>
+        </>        
     )
-}
-  
+  }

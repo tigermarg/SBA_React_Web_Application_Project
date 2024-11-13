@@ -1,17 +1,17 @@
-import BookCard from './BookCard';
+import BookCard from "./BookCard";
 
-export default function Library({ books }) {
-
-    return (
+export default function Library({ books }){
+    return(
         <>
-            {books.map((book, index) => (
-                <BookCard key={index}
-                        image={book.volumeInfo?.imageLinks?.thumbnail || {}}
-                        title={book.volumeInfo?.title || 'Untitled'}
-                        author={book.volumeInfo?.authors?.join(', ') || 'Unknown Author'}
-                        published={book.volumeInfo?.publishedDate || 'Unknown Date'}
+        {books.map((book, index) => {
+            return <BookCard key={index}
+                        image={book.volumeInfo?.imageLinks?.thumbnail} 
+                        title={book.volumeInfo?.title}
+                        author={book.volumeInfo?.authors?.join(', ')}
+                        published={book.volumeInfo?.publishedDate}
                     />
-            ))}
+                })
+            }
         </>
-    );
+    )
 }

@@ -1,12 +1,11 @@
-export default function SearchBar({ handleSearch, search }) {
+export default function SearchBar({ handleSearch, search , onClick}) {
 
-    return (
-      <>
-        <form action="">
-            <input onChange={handleSearch} value={search} type="text" placeholder="Search for a book..."/>
-            <button type="submit">Search</button>
-        </form>
-      </>
-    )
-  }
-  
+  return (
+    <>
+      <form action="">
+          <input onChange={handleSearch} value={search} type="text" placeholder="Search for a book..."/>
+          <button onClick={onClick}>Search</button>
+      </form>
+    </>
+  )
+}
