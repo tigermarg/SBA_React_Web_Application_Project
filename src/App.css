@@ -18,24 +18,26 @@ body, html {
 
 header {
   padding: 10px 0 10px 0;
-  background: lightblue;
-  opacity: .65;
-  color: rgb(0, 75, 128);
+  background: rgba(183, 220, 238, 0.562);
+  opacity: .75;
   text-align: center;
+  top: 0px;
+  width: 100%;
 }
 
 header h1 {
   display: inline;
-  margin: 0;
-  font-family: 'NostalgicWhispers', sans-serif; 
+  font-family: 'NostalgicWhispers', Trebuchet MS;
   font-weight: bold; 
   font-size: 3rem;
+  color: rgb(0, 75, 128);
 }
 
 .searchBar {
   display: flex;
   justify-content: center;
-  margin-top: 10px
+  margin-top: 20px;
+  width: 100%;
 }
 
 .searchBox {
@@ -45,29 +47,80 @@ header h1 {
   border-radius: 5px;
   padding: 5px;
   margin-right: 5px;
-  font-family: sans-serif; 
+  font-family: Trebuchet MS; 
 }
 
 button {
   width: 5em;
+  border-color: rgba(128, 128, 128, 0.253);
   border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: Trebuchet MS; 
+}
+
+button:hover {
+  border-color: lightblue;
+  transform: scale(1.1);
+}
+
+button:active {
+  transform: scale(0.98);
 }
 
 .sortLinks {
-  margin: 5px;
+  margin: 10px;
   text-align: center;
-  font-family: sans-serif; 
+  font-family: Trebuchet MS; 
   font-size: 14px;
+  text-decoration: none;
 }
 
 .sortLinks a:hover {
   text-decoration: underline;
 }
 
+.book-library {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
 .book-card {
+  background-color: rgba(255, 255, 255, 0.76) ; 
+  border: 1px solid rgb(211, 201, 201);
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+  padding: 20px;
   margin: 10px;
+  text-align: center;
+  width: 12rem;
+  height: 18rem;
   display: inline-block;
   justify-content: space-around;
-  width: 10rem;
-  height: 25%;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.book-thumbnail {
+  width: 75%;
+  height: 65%;
+  border-bottom: 1px solid #ddd;
+}
+
+.book-card h3{
+  font-family:'NostalgicWhispers', Trebuchet MS;
+  margin-bottom: 6px;
+  color: rgb(0, 75, 128);
+}
+
+.book-card p{
+  font-family: Trebuchet MS;
+  font-size: small;
+  margin: 2px;
 }

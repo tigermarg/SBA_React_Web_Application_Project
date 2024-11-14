@@ -29,14 +29,14 @@ export default function Library({ books }) {
     const sortedBooks = sortBooks(sortCriteria); //Apply the sorting function
 
     return (
-        <>
+        <div className="books-body">
             <div className="sortLinks">
                 Sort by: {' '}
                 <a href="#" onClick={() => setSortCriteria("title")}>Title</a>
                 {' | '}
                 <a href="#" onClick={() => setSortCriteria("published")}>Published Date</a>
             </div>
-            <div>
+            <div className="book-library"> 
                 {sortedBooks.map((book, index) => (
                     <BookCard
                         key={index}
@@ -47,6 +47,6 @@ export default function Library({ books }) {
                     />
                 ))}
             </div>
-        </>
+        </div>
     );
 }
