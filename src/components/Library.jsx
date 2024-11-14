@@ -37,9 +37,9 @@ export default function Library({ books }) {
                 <a href="#" onClick={() => setSortCriteria("published")}>Published Date</a>
             </div>
             <div className="book-library"> 
-                {sortedBooks.map((book, index) => (
+                {sortedBooks.map((book) => (
                     <BookCard
-                        key={index}
+                        key={book.id || book.volumeInfo.title}
                         image={book.volumeInfo?.imageLinks?.thumbnail || {}}
                         title={book.volumeInfo?.title || 'Untitled'}
                         author={book.volumeInfo?.authors?.join(', ') || 'Unknown Author'}
