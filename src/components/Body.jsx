@@ -24,7 +24,7 @@ export default function Body() {
   }
     
     //Function to update search state when input changes
-    function handleSearch(e){
+    function handleChange(e){
         setSearch(e.target.value)
     }
 
@@ -36,7 +36,7 @@ export default function Body() {
 
     return (
         <>
-            <SearchBar handleSearch={handleSearch} search={search} onClick={handleClick} />
+            <SearchBar handleChange={handleChange} search={search} onClick={handleClick} />
             <Library books={books} />
         </>        
     )
