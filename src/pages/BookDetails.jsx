@@ -28,7 +28,7 @@ export default function BookDetails() {
   if (!bookDetail) return <p>Loading...</p>;
 
   return (
-    <div>
+    <div className='book-details'>
       <h1>{bookDetail.title}</h1>
       <p>{bookDetail.authors?.join(', ')}</p>
       <p>{bookDetail.publishedDate}</p>

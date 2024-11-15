@@ -1,3 +1,4 @@
+
 @font-face {
   font-family: 'NostalgicWhispers';
   src: url('./styles/NostalgicWhispers-Regular.ttf') format('truetype');
@@ -123,4 +124,48 @@ button:active {
   font-family: Trebuchet MS;
   font-size: small;
   margin: 2px;
+}
+
+.book-details {
+  max-width: 65%; 
+  margin: auto;  
+  padding: 20px;    
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 5px 10px gray;
+}
+
+.book-details h1 {
+  font-family:'NostalgicWhispers';
+  color:black;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.book-details p {
+  color: black;
+  margin: 5px 0;
+  font-family: Trebuchet MS;
+}
+
+.book-details p:first-of-type {
+  font-size: 1.2rem; 
+}
+
+.book-details p:nth-of-type(2) {
+  color: rgb(128, 124, 124); 
+  font-style: italic; 
+}
+
+.book-details img {
+  display: block;
+  width: 200px; 
+  height: auto;  
+  margin: 20px auto;
+}
+
+.book-details p:last-of-type {
+  color: #444;  
+  margin-top: 15px; 
+  text-align: justify;
 }
