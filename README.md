@@ -1,8 +1,28 @@
-# React + Vite
+# React Web Application Using Google Books API
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### About
+This book search library application is built using React + Vite. It includes a search bar component to fetch a list of books using the Google API to display on the main page. It utilizes react-router-dom to navigate to the details page of the book when clicked by the user. The list of books can be sorted by "Title" or "Published Date". 
 
-Currently, two official plugins are available:
+### Technologies
+Windows OS, VS Code
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### How to Get Started
+* Clone the repository
+* Install Dependencies (see below)
+* npm run cmd: `npm run dev`
+* Interact with the web page by typing a book title and clicking your selection:
+
+| `localhost:` Route | Description |
+| --- | --- 
+| `/` | Home URL |
+| `/details/:bookId` | Book Details |
+
+### Built with:
+* React + Vite: 
+<br>`npm create vite@latest .`
+* React Router:
+<br>`npm i react-router-dom`
+* Google Books API: https://developers.google.com/books/
+<br>-- Search Text and retrieve book information.
+* Pexels: https://www.pexels.com/
+<br>-- Library of free stock photos, images & videos.

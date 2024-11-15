@@ -1,7 +1,7 @@
 export default function Header(){
     return(
         <header>
-            <h1>Book Library</h1>
+            <h1>The Bookshelf.</h1>
         </header>
         
     )
