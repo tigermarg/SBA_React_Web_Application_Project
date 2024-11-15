@@ -1,7 +1,7 @@
 import { useState } from "react";
 import BookCard from "./BookCard";
 
-export default function Library({ books }) {
+export default function Library({ books, onBookClick }) {
     console.log(books)
     const [sortCriteria, setSortCriteria] = useState("title"); //Set state for sorting
 
@@ -36,17 +36,18 @@ export default function Library({ books }) {
                 {' | '}
                 <a href="#" onClick={() => setSortCriteria("published")}>Published Date</a>
             </div>
-            <div className="book-library"> 
-                {sortedBooks.map((book) => (
-                    <BookCard
-                        key={book.id || book.volumeInfo.title}
-                        image={book.volumeInfo?.imageLinks?.thumbnail || {}}
-                        title={book.volumeInfo?.title || 'Untitled'}
-                        author={book.volumeInfo?.authors?.join(', ') || 'Unknown Author'}
-                        published={book.volumeInfo?.publishedDate || 'Unknown Date'}
-                    />
-                ))}
-            </div>
+            <div className="book-library">
+      {sortedBooks.map((book) => (
+        <div key={book.id || book.volumeInfo.title} onClick={() => onBookClick(book.id)}>
+          <BookCard
+            image={book.volumeInfo?.imageLinks?.thumbnail || 'https://via.placeholder.com/150'}
+            title={book.volumeInfo?.title || 'Untitled'}
+            author={book.volumeInfo?.authors?.join(', ') || 'Unknown Author'}
+            published={book.volumeInfo?.publishedDate || 'Unknown Date'}
+          />
+        </div>
+      ))}
+    </div>
         </div>
     );
 }

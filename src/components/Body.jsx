@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import SearchBar from "./SearchBar";
 import Library from './Library';
 
@@ -7,6 +8,8 @@ export default function Body() {
     const [books, setBooks] = useState([]) //State for books
     const [search, setSearch] = useState('') //State for search
     const [triggerSearch, setTriggerSearch] = useState(false) //Set state for manual search
+
+    const nav = useNavigate();
 
   // Async function to fetch books based on the search term
   async function searchBook() {
@@ -45,10 +48,15 @@ export default function Body() {
         setTriggerSearch(true);
     }
 
+    //Navigate to details page when clicked
+    function handleBookClick(bookId){
+      nav(`/details/${bookId}`);
+    }
+
     return (
         <>
             <SearchBar handleChange={handleChange} search={search} onClick={handleClick} />
-            <Library books={books} />
+            <Library books={books} onBookClick={handleBookClick}/>
         </>        
     )
   }
